@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="32dp"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/iv_back_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Partida Ping Pong X"
+        android:textSize="32sp"
+        app:layout_constraintTop_toBottomOf="@+id/iv_back_button" />
+
+    <ImageView
+        android:id="@+id/iv_separator"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/separator"
+        app:layout_constraintTop_toBottomOf="@id/tv_title" />
+
+    <TextView
+        android:id="@+id/tv_home_score"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/score_home"
+        android:text="0"
+        android:textAlignment="center"
+        android:textColor="#FFF"
+        android:textSize="72sp"
+        app:layout_constraintBottom_toBottomOf="@id/tv_versus"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_versus" />
+
+    <TextView
+        android:id="@+id/tv_versus"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="64dp"
+        android:text="X"
+        android:textAlignment="center"
+        android:textSize="72sp"
+        app:layout_constraintEnd_toStartOf="@id/tv_away_score"
+        app:layout_constraintStart_toEndOf="@id/tv_home_score"
+        app:layout_constraintTop_toBottomOf="@+id/iv_separator" />
+
+    <TextView
+        android:id="@+id/tv_away_score"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/score_away"
+        android:text="0"
+        android:textAlignment="center"
+        android:textColor="#FFF"
+        android:textSize="72sp"
+        app:layout_constraintBottom_toBottomOf="@id/tv_versus"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_versus" />
+
+    <TextView
+        android:id="@+id/tv_home_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Home Name"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/tv_home_score"
+        app:layout_constraintStart_toStartOf="@id/tv_home_score"
+        app:layout_constraintTop_toBottomOf="@id/tv_home_score" />
+
+    <TextView
+        android:id="@+id/tv_away_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Away Name"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/tv_away_score"
+        app:layout_constraintStart_toStartOf="@id/tv_away_score"
+        app:layout_constraintTop_toBottomOf="@id/tv_away_score" />
+
+    <Button
+        android:id="@+id/bt_point_home"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/button_blue"
+        android:text="PONTO"
+        android:textColor="#FFFF00"
+        app:layout_constraintEnd_toEndOf="@id/tv_home_name"
+        app:layout_constraintStart_toStartOf="@id/tv_home_name"
+        app:layout_constraintTop_toBottomOf="@id/tv_home_name" />
+
+    <Button
+        android:id="@+id/bt_point_away"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/button_blue"
+        android:text="PONTO"
+        android:textColor="#FFFF00"
+        app:layout_constraintEnd_toEndOf="@id/tv_away_name"
+        app:layout_constraintStart_toStartOf="@id/tv_away_name"
+        app:layout_constraintTop_toBottomOf="@id/tv_away_name" />
+
+    <Button
+        android:id="@+id/bt_finish"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/button_yellow"
+        android:text="TERMINAR PARTIDA"
+        android:textColor="#27226B"
+        app:layout_constraintEnd_toEndOf="@id/bt_point_away"
+        app:layout_constraintStart_toStartOf="@id/bt_point_home"
+        app:layout_constraintTop_toBottomOf="@id/bt_point_away" />
+
+    <Button
+        android:id="@+id/bt_revange"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/button_yellow"
+        android:text="REVANCHE"
+        android:textColor="#27226B"
+        app:layout_constraintEnd_toEndOf="@id/bt_finish"
+        app:layout_constraintStart_toStartOf="@id/bt_finish"
+        app:layout_constraintTop_toBottomOf="@id/bt_finish" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
