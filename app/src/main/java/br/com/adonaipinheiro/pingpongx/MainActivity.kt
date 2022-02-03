@@ -3,10 +3,8 @@ package br.com.adonaipinheiro.pingpongx
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import br.com.adonaipinheiro.pingpongx.constants.ExtrasContants
 import br.com.adonaipinheiro.pingpongx.databinding.ActivityMainBinding
-import br.com.adonaipinheiro.pingpongx.databinding.ActivityPlayerBinding
 
 class MainActivity : AppCompatActivity() {
 
@@ -41,30 +39,30 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun listeners() {
-        binding.ivBackButton.setOnClickListener() {
+        binding.ivBackButton.setOnClickListener {
             val nextScreen = Intent(this, PlayerActivity::class.java)
             startActivity(nextScreen)
             finish()
         }
 
-        binding.btPointHome.setOnClickListener() {
+        binding.btPointHome.setOnClickListener {
             homeScore++
             binding.tvHomeScore.text = homeScore.toString()
         }
 
-        binding.btPointAway.setOnClickListener() {
+        binding.btPointAway.setOnClickListener {
             awayScore++
             binding.tvAwayScore.text = awayScore.toString()
         }
 
-        binding.btFinish.setOnClickListener() {
+        binding.btFinish.setOnClickListener {
             val ret = Intent()
             ret.putExtra("WINNER", getWinner())
             setResult(RESULT_OK, ret)
             finish()
         }
 
-        binding.btRevange.setOnClickListener() {
+        binding.btRevange.setOnClickListener {
             homeScore = 0
             awayScore = 0
             binding.tvHomeScore.text = "0"
@@ -72,7 +70,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun getWinner(): String? {
+    private fun getWinner(): String {
         return if (homeScore > awayScore) "Jogador 1 ganhou" else if (homeScore < awayScore) "Jogador 2 ganhou" else "Empate"
     }
 

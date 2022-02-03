@@ -24,15 +24,15 @@ class PlayerActivity : AppCompatActivity() {
     }
 
     private fun listeners() {
-        binding.btStartGame.setOnClickListener() {
+        binding.btStartGame.setOnClickListener {
             val nextScreen = Intent(this, MainActivity::class.java)
             nextScreen.putExtra(ExtrasContants.KEY_PLAYER_1, binding.etPlayer1.text.toString())
             nextScreen.putExtra(ExtrasContants.KEY_PLAYER_2, binding.etPlayer2.text.toString())
-            previewRquest.launch(nextScreen)
+            previewRequest.launch(nextScreen)
         }
     }
 
-    private val previewRquest =
+    private val previewRequest =
         registerForActivityResult((ActivityResultContracts.StartActivityForResult())) {
             if (it.resultCode == RESULT_OK) {
                 Toast.makeText(this, it.data?.getStringExtra("WINNER"), Toast.LENGTH_LONG).show()
